@@ -44,6 +44,9 @@ void setup() {
   peerInfo.channel = 0;
   peerInfo.encrypt = false;
 
+  peerInfo.channel = 0;
+  peerInfo.ifidx = WIFI_IF_STA;
+
   // Add peer
   if (esp_now_add_peer(&peerInfo) != ESP_OK) {
     Serial.println(F("Failed to add peer"));
@@ -68,5 +71,5 @@ void loop() {
   else {
     Serial.println(F("Error sending the data"));
   }
-  delay(1000);
+  //delay(1000);
 }
