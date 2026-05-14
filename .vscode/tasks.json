@@ -1,0 +1,50 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "PIO Monitor",
+            "type": "shell",
+            "command": "/mnt/c/Users/fdao6/.platformio/penv/Scripts/platformio.exe",
+            "args": [
+                "device",
+                "monitor",
+                "--port",
+                "COM7",
+                "--baud",
+                "115200"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "PIO Build",
+            "type": "shell",
+            "command": "/mnt/c/Users/fdao6/.platformio/penv/Scripts/platformio.exe",
+            "args": [
+                "run"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "PIO Upload",
+            "type": "shell",
+            "command": "/mnt/c/Users/fdao6/.platformio/penv/Scripts/platformio.exe",
+            "args": [
+                "run",
+                "--target",
+                "upload"
+            ],
+            "problemMatcher": [],
+            "dependsOn": "PIO Build"
+        }
+    ]
+}
